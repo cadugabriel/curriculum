@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Eduardo Romeiro Gabriel - Engenheiro de Dados Sênior</title>
+    <style>
+        /* Estilos otimizados para Word/PDF */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #333;
+            max-width: 210mm; /* Formato A4 */
+            margin: 0 auto;
+            padding: 20px 25px;
+            background-color: #ffffff;
+        }
+        
+        /* Cabeçalho com foto e informações */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 4px solid #2E5A88;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            gap: 30px;
+        }
+        
+        .header-content {
+            flex: 1;
+        }
+        
+        .photo-container {
+            width: 140px;
+            height: 160px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 2px solid #e6eef7;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #e6eef7 0%, #d6e4f0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2E5A88;
+            font-size: 10pt;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .photo-placeholder span {
+            font-weight: 600;
+        }
+        
+        .name {
+            font-size: 26pt;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+        
+        .title {
+            font-size: 16pt;
+            color: #2E5A88;
+            font-weight: 600;
+            margin-bottom: 10px;
+            padding-left: 2px;
+        }
+        
+        .personal-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 10pt;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        
+        .personal-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 10pt;
+            color: #555;
+            margin-top: 5px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Seções */
+        .section {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #2E5A88;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #e6eef7;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Experiência profissional */
+        .job {
+            margin-bottom: 18px;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .job-title {
+            font-weight: 700;
+            color: #1a365d;
+            font-size: 12pt;
+        }
+        
+        .job-company {
+            font-weight: 600;
+            color: #2E5A88;
+        }
+        
+        .job-period {
+            font-weight: 600;
+            color: #666;
+            white-space: nowrap;
+        }
+        
+        .job-description {
+            margin-top: 8px;
+            text-align: justify;
+        }
+        
+        /* Lista de habilidades com tags */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+        
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .category-title {
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 8px;
+            font-size: 11pt;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        
+        .skill-tag {
+            background-color: #e6eef7;
+            color: #2E5A88;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 10pt;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        /* Resumo profissional */
+        .summary {
+            background-color: #f8fafd;
+            padding: 15px;
+            border-left: 4px solid #2E5A88;
+            margin-bottom: 20px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        /* Formação */
+        .education-item {
+            margin-bottom: 12px;
+        }
+        
+        .education-degree {
+            font-weight: 700;
+            color: #1a365d;
+        }
+        
+        .education-school {
+            color: #2E5A88;
+        }
+        
+        .education-period {
+            color: #666;
+            font-size: 10pt;
+        }
+        
+        /* Linha do tempo para experiências mais antigas */
+        .timeline-experience {
+            margin-left: 15px;
+            padding-left: 15px;
+            border-left: 2px solid #e6eef7;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3px;
+        }
+        
+        /* Palavras-chave escondidas para ATS */
+        .ats-keywords {
+            font-size: 1pt;
+            color: transparent;
+            height: 1px;
+            overflow: hidden;
+        }
+        
+        /* Responsividade para impressão */
+        @media print {
+            body {
+                font-size: 10pt;
+                padding: 15px 20px;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            .skill-tag {
+                page-break-inside: avoid;
+            }
+            
+            .photo-container {
+                border: 1px solid #ccc;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+        }
+        
+        /* Estilo para múltiplas funções */
+        .multi-role {
+            background-color: #f0f8ff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border-left: 3px solid #4a90e2;
+        }
+        
+        .role-title {
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 5px;
+        }
+        
+        /* Instruções para adicionar a foto */
+        .photo-instructions {
+            font-size: 9pt;
+            color: #777;
+            margin-top: 5px;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Palavras-chave para ATS -->
+<div class="ats-keywords">
+    Carlos Eduardo Romeiro Gabriel, Engenheiro de Dados, Data Engineer, Data Engineering, Azure Data Engineer, AWS Data Engineer, 
+    Big Data, Data Pipeline, ETL, ELT, Data Lake, Data Warehouse, Data Modeling, 
+    Apache Spark, PySpark, Databricks, Azure Data Factory, AWS Glue, Kafka, 
+    SQL, Python, Cloud Computing, Azure, AWS, Data Architecture, 
+    Data Integration, Data Transformation, Data Processing, Batch Processing, 
+    Stream Processing, Real-time Data, Data Governance, Data Quality, 
+    CI/CD, DevOps, DataOps, Terraform, Docker, Kubernetes, 
+    Power BI, Business Intelligence, Data Analytics, Machine Learning Engineering,
+    Senior Data Engineer, Cloud Architect, 25 anos experiência, SQL Server, Oracle,
+    Database Administrator, BI Developer, Project Manager, Team Leadership,
+    ETL Development, Data Pipeline, Business Intelligence, Telecom Billing, Telecomunicações
+</div>
+
+<!-- Cabeçalho com Foto -->
+<div class="header">
+    <div class="header-content">
+        <div class="name">Carlos Eduardo Romeiro Gabriel</div>
+        <div class="title">Engenheiro de Dados Sênior & Arquiteto de Soluções em Nuvem</div>
+        
+        <div class="personal-info">
+            <div class="personal-item">👤 Masculino</div>
+            <div class="personal-item">🎂 17/12/1981</div>
+            <div class="personal-item">🇧🇷 Brasileiro</div>
+            <div class="personal-item">💍 Casado</div>
+        </div>
+        
+        <div class="contact-bar">
+            <div class="contact-item">📱 WhatsApp: +55 11 98781-5091</div>
+            <div class="contact-item">✉️ carloseduardo.gabriel@gmail.com</div>
+            <div class="contact-item">🔗 linkedin.com/in/cadugabriel</div>
+            <div class="contact-item">💻 github.com/cadugabriel</div>
+        </div>
+    </div>
+    
+    <div class="photo-container">
+		<img src="foto.jpg" alt="Carlos Eduardo" style="width:100%;height:100%;object-fit:cover;" /> 
+    </div>
+</div>
+
+<!-- Resumo Profissional -->
+<div class="section">
+    <div class="section-title">Resumo Profissional</div>
+    <div class="summary">
+        <strong>Engenheiro de Dados Sênior com 12+ anos de experiência em ambientes cloud</strong> (Azure e AWS) e <strong>mais de 25 anos de trajetória sólida em tecnologia</strong>. Carreira evolutiva que começou com desenvolvimento, passou por gestão de projetos e consolidou-se em arquitetura e engenharia de dados. Especialista em arquitetura de dados escalável, construção de pipelines de dados (ETL/ELT), data lakes modernos e data warehouses. Experiência comprovada em projetos end-to-end de engenharia de dados, desde o design da arquitetura até a implementação e otimização. Domínio em processamento de dados batch e streaming utilizando Apache Spark, Databricks, Kafka e ferramentas nativas de cloud.
+    </div>
+</div>
+
+<!-- Experiência Profissional COMPLETA -->
+<div class="section">
+    <div class="section-title">Experiência Profissional</div>
+    
+    <!-- Experiência Principal (Foco Engenharia de Dados) -->
+    <div class="job">
+        <div class="job-header">
+            <div>
+                <span class="job-title">Engenheiro de Dados Sênior & Arquiteto de Soluções</span> | 
+                <span class="job-company">PJ/Autônomo em parceria com Remay</span>
+            </div>
+            <div class="job-period">02/2014 – 02/2026 (12 anos)</div>
+        </div>
+        <div class="job-description">
+            <strong>Arquitetura de Dados em Cloud & Engenharia de Dados (Azure & AWS) – 2019-2026</strong><br>
+            • Liderança no design e implementação de <strong>arquiteturas de dados escaláveis</strong> na nuvem Azure<br>
+            • Construção de <strong>Data Lakes</strong> organizados em camadas Bronze, Silver e Gold com <strong>Data Governance</strong><br>
+            • Desenvolvimento de <strong>pipelines de dados (ETL/ELT)</strong> com <strong>Azure Data Factory</strong>, <strong>Azure Synapse Analytics</strong> e <strong>Databricks</strong><br>
+            • Processamento <strong>batch e streaming</strong> com <strong>Apache Spark (PySpark)</strong> e <strong>Kafka</strong><br>
+            • Construção de <strong>APIs RESTful</strong> e <strong>microsserviços</strong> para disponibilização de dados<br>
+            • Modelagem de dados dimensional e implementação de <strong>data warehouses</strong><br>
+            • Automação com <strong>CI/CD</strong>, <strong>Terraform</strong> e <strong>Azure DevOps</strong> (Infraestrutura como Código)<br><br>
+            
+            <strong>Projetos de Big Data & Business Intelligence – 2014-2019</strong><br>
+            • Implementação de soluções de <strong>Big Data</strong> utilizando ecossistema Hadoop (HDFS, Hive, Spark)<br>
+            • Desenvolvimento de dashboards e relatórios com <strong>Power BI</strong><br>
+            • Integração de fontes de dados heterogêneas (SQL, NoSQL, APIs, arquivos)
+        </div>
+    </div>
+    
+    <!-- Experiência Global System com múltiplas funções -->
+    <div class="job">
+        <div class="job-header">
+            <div>
+                <span class="job-title">Global System</span> | 
+                <span class="job-company">Telecomunicações</span>
+            </div>
+            <div class="job-period">06/2011 – 07/2014 (3 anos 2 meses)</div>
+        </div>
+        
+        <div class="multi-role">
+            <div class="role-title">🏢 Atuação Multifuncional: Engenheiro de Dados, Gerente de Projetos & Líder de Equipe</div>
+            <div class="job-description">
+                <strong>Projeto de Business Intelligence para Cobrança (BI de Cobrança)</strong><br>
+                • <strong>Engenheiro de Dados:</strong> Desenvolvimento de pipelines <strong>ETL</strong> para consolidação de dados de cobrança de múltiplas fontes, otimização de processos de extração, transformação e carga de dados financeiros<br>
+                • <strong>Gerente de Projetos:</strong> Gestão completa do ciclo de vida do projeto, desde o planejamento estratégico até a entrega final, com foco em soluções de BI para análise de faturamento e receita<br>
+                • <strong>Líder de Equipe:</strong> Liderança de equipe multifuncional de 10+ profissionais, incluindo desenvolvedores, analistas de dados e DBA's, com foco em entrega de soluções de dados para área financeira<br>
+                • Desenvolvimento de dashboards e relatórios analíticos para monitoramento de métricas de cobrança, inadimplência e performance financeira<br>
+                • Integração de sistemas de cobrança com data warehouses corporativos<br>
+                • Modelagem dimensional para otimização de consultas analíticas sobre dados de faturamento
+            </div>
+        </div>
+    </div>
+    
+    <!-- Linha do tempo para experiências anteriores -->
+    <div class="section-title" style="font-size: 12pt; margin-top: 25px; color: #666;">Trajetória Anterior em Desenvolvimento</div>
+    
+    <div class="timeline-experience">
+        <div class="timeline-header">
+            <div>
+                <span class="job-title">Analista Desenvolvedor Sênior</span> | 
+                <span class="job-company">Keyrus Group</span>
+            </div>
+            <div class="job-period">04/2008 – 05/2011 (3 anos 2 meses)</div>
+        </div>
+        <div class="job-description">
+            • Desenvolvimento full-stack com <strong>.NET, VB6, ASP, Ajax</strong><br>
+            • Programação avançada em <strong>SQL Server 2005</strong> e <strong>Oracle</strong><br>
+            • Modelagem de banco de dados e otimização de queries<br>
+            • Fundamentos sólidos em desenvolvimento back-end que suportariam futura transição para engenharia de dados
+        </div>
+    </div>
+    
+    <div class="timeline-experience">
+        <div class="timeline-header">
+            <div>
+                <span class="job-title">Analista de Desenvolvimento</span> | 
+                <span class="job-company">Grupo SMS (Carrier Interconnect)</span>
+            </div>
+            <div class="job-period">11/2007 – 04/2008 (6 meses)</div>
+        </div>
+        <div class="job-description">
+            • Desenvolvimento em <strong>ASP, VB6</strong><br>
+            • Programação em <strong>SQL Server 2005</strong><br>
+            • Criação de relatórios com <strong>Crystal Reports 11</strong><br>
+            • Experiência em sistemas de telecomunicações
+        </div>
+    </div>
+    
+    <div class="timeline-experience">
+        <div class="timeline-header">
+            <div>
+                <span class="job-title">Consultor de Desenvolvimento e Integração</span> | 
+                <span class="job-company">Rede do Saber</span>
+            </div>
+            <div class="job-period">11/2004 – 10/2007 (3 anos)</div>
+        </div>
+        <div class="job-description">
+            • Análise e desenvolvimento na plataforma <strong>.NET</strong><br>
+            • Administração de Banco de Dados <strong>SQL Server</strong><br>
+            • Integração de sistemas e desenvolvimento de APIs<br>
+            • Consolidação de expertise em ambientes Microsoft
+        </div>
+    </div>
+    
+    <div class="timeline-experience">
+        <div class="timeline-header">
+            <div>
+                <span class="job-title">Desenvolvedor de Sistemas</span> | 
+                <span class="job-company">Masterdom Consultoria em Informática</span>
+            </div>
+            <div class="job-period">06/2000 – 10/2004 (4 anos 5 meses)</div>
+        </div>
+        <div class="job-description">
+            • Desenvolvimento web com <strong>IBM/Lotus Notes</strong><br>
+            • Atendimento ao Governo do Estado de São Paulo<br>
+            • Início da carreira profissional em TI<br>
+            • Desenvolvimento de aplicações empresariais
+        </div>
+    </div>
+</div>
+
+<!-- Habilidades Técnicas -->
+<div class="section">
+    <div class="section-title">Habilidades Técnicas</div>
+    
+    <div class="skills-container">
+        <div class="skill-category">
+            <div class="category-title">Cloud & Big Data</div>
+            <div class="skill-tags">
+                <span class="skill-tag">Microsoft Azure</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Databricks</span>
+                <span class="skill-tag">Apache Spark</span>
+                <span class="skill-tag">PySpark</span>
+                <span class="skill-tag">Azure Data Factory</span>
+                <span class="skill-tag">Azure Synapse</span>
+                <span class="skill-tag">AWS Glue</span>
+                <span class="skill-tag">Data Lakes</span>
+                <span class="skill-tag">Data Warehousing</span>
+                <span class="skill-tag">Kafka</span>
+                <span class="skill-tag">Hadoop</span>
+                <span class="skill-tag">Hive</span>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <div class="category-title">Linguagens & Bancos de Dados</div>
+            <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">PySpark</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">Shell Script</span>
+                <span class="skill-tag">SQL Server</span>
+                <span class="skill-tag">Oracle</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">CosmosDB</span>
+                <span class="skill-tag">Teradata</span>
+                <span class="skill-tag">DB2</span>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <div class="category-title">ETL/ELT & Ferramentas</div>
+            <div class="skill-tags">
+                <span class="skill-tag">Azure Data Factory</span>
+                <span class="skill-tag">SSIS</span>
+                <span class="skill-tag">Talend</span>
+                <span class="skill-tag">Apache Airflow</span>
+                <span class="skill-tag">dbt (Data Build Tool)</span>
+                <span class="skill-tag">Pentaho</span>
+                <span class="skill-tag">Data Stage</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">Tableau</span>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <div class="category-title">DevOps & Infraestrutura</div>
+            <div class="skill-tags">
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">Terraform</span>
+                <span class="skill-tag">Azure DevOps</span>
+                <span class="skill-tag">GitHub Actions</span>
+                <span class="skill-tag">CI/CD</span>
+                <span class="skill-tag">DataOps</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Jira</span>
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Windows Server</span>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <div class="category-title">Conceitos & Metodologias</div>
+            <div class="skill-tags">
+                <span class="skill-tag">Data Modeling</span>
+                <span class="skill-tag">Data Governance</span>
+                <span class="skill-tag">Data Quality</span>
+                <span class="skill-tag">Data Mesh</span>
+                <span class="skill-tag">Data Pipeline</span>
+                <span class="skill-tag">Data Architecture</span>
+                <span class="skill-tag">Batch Processing</span>
+                <span class="skill-tag">Stream Processing</span>
+                <span class="skill-tag">REST APIs</span>
+                <span class="skill-tag">Microservices</span>
+                <span class="skill-tag">Agile/Scrum</span>
+                <span class="skill-tag">Project Management</span>
+                <span class="skill-tag">Team Leadership</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Formação Acadêmica -->
+<div class="section">
+    <div class="section-title">Formação Acadêmica</div>
+    
+    <div class="education-item">
+        <div class="education-degree">Pós-graduação em Gestão</div>
+        <div class="education-school">Uninove</div>
+        <div class="education-period">Concluída em 2019</div>
+    </div>
+    
+    <div class="education-item">
+        <div class="education-degree">Bacharelado em Ciência da Computação</div>
+        <div class="education-school">Universidade São Judas Tadeu (USJT)</div>
+        <div class="education-period">Concluído em 2008</div>
+    </div>
+    
+    <div class="education-item">
+        <div class="education-degree">Tecnólogo em Processamento de Dados</div>
+        <div class="education-school">Colégio São Judas Tadeu (CSJT)</div>
+        <div class="education-period">Concluído em 1999</div>
+    </div>
+</div>
+
+<!-- Idiomas -->
+<div class="section">
+    <div class="section-title">Idiomas</div>
+    <div style="display: flex; gap: 30px; margin-top: 10px;">
+        <div>
+            <strong>Português:</strong> Nativo
+        </div>
+        <div>
+            <strong>Inglês:</strong> Nível Independente (B1) – Compreensão, Comunicação e Escrita
+        </div>
+        <div>
+            <strong>Espanhol:</strong> Nível Básico (A1) – Compreensão, Comunicação e Escrita
+        </div>
+    </div>
+</div>
+
+<!-- Instruções para adicionar a foto -->
+<div class="photo-instructions">
+    <strong>Instruções para adicionar sua foto:</strong> No código HTML, substitua a div com classe "photo-placeholder" por &lt;img src="sua-foto.jpg" alt="Carlos Eduardo" style="width:100%;height:100%;object-fit:cover;"&gt;
+</div>
+
+</body>
+</html>
